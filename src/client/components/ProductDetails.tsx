@@ -26,12 +26,12 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             <div className="col-12 col-sm-5 col-lg-4">
                 <Image />
             </div>
-            <div className="col-12 col-sm-7 col-lg-6">
+            <div data-testid={'detailedInfo'} className="col-12 col-sm-7 col-lg-6">
                 <h1 className={bem("Name")}>{product.name}</h1>
                 <p className={bem("Description")}>{product.description}</p>
                 <p className={bem("Price", ['fs-3'])}>${product.price}</p>
                 <p>
-                    <button className={bem("AddToCart", ['btn', 'btn-primary', btnSizeClass])} onClick={onClick}>Add to Cart</button>
+                    <button data-testid={"addToCartButton"} className={bem("AddToCart", ['btn', 'btn-primary', btnSizeClass])} onClick={onClick}>Add to Cart</button>
                     <CartBadge id={product.id} />
                 </p>
                 <dl>
